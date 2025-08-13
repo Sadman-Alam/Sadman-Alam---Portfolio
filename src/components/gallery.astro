@@ -1,0 +1,101 @@
+---
+const photos = [
+  { src: "/1.jpg", alt: "Photo 1 description" },
+  { src: "/9.jpg", alt: "Photo 2 description" },
+  { src: "/3.jpg", alt: "Photo 3 description" },
+  { src: "/5.jpg", alt: "Photo 4 description" },
+  { src: "/7.jpg", alt: "Photo 5 description" },
+  { src: "/6.jpg", alt: "Photo 6 description" },
+  { src: "/4.jpg", alt: "Photo 7 description" },
+  { src: "/8.jpg", alt: "Photo 8 description" },
+  { src: "/2.jpg", alt: "Photo 9 description" },
+];
+---
+
+<section
+  id="gallery"
+  class="pt-12 pb-12 max-w-5xl mx-auto px-6 border-t border-[#ffffff10]"
+>
+  <p
+    class="text-lg font-semibold tracking-wide mb-4 text-white"
+    style="text-align: left;"
+  >
+    Capturing Stories, Embracing the Art of Everyday Life
+  </p>
+
+  <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3" id="gallery-grid">
+    {photos.map(({ src, alt }) => (
+      <div
+        class="w-full aspect-[16/8] rounded-md overflow-hidden bg-[var(--background)] border border-dotted border-gray-700 cursor-pointer group"
+      >
+        <img
+          src={src}
+          alt={alt}
+          class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div
+  id="lightbox"
+  class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer"
+  aria-modal="true"
+  role="dialog"
+>
+  <button
+    id="lightbox-close"
+    class="absolute top-6 right-6 text-white text-3xl font-bold z-50"
+    aria-label="Close"
+  >
+    &times;
+  </button>
+  <img
+    id="lightbox-img"
+    src=""
+    alt=""
+    class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
+  />
+</div>
+
+<script client:load>
+  // Wait for DOM content to be loaded
+  window.addEventListener("DOMContentLoaded", () => {
+    const galleryGrid = document.getElementById("gallery-grid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.getElementById("lightbox-close");
+
+    // Add click listener to each image container
+    galleryGrid.querySelectorAll("img").forEach((img) => {
+      img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        lightbox.classList.remove("hidden");
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    // Close lightbox when clicking outside image or on close button
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.add("hidden");
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+    });
+
+    lightboxImg.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+
+    closeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      lightbox.classList.add("hidden");
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+    });
+  });
+</script>

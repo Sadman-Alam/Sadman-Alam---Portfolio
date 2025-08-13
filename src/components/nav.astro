@@ -1,0 +1,206 @@
+---
+interface NavItem {
+  label: string;
+  href: string;
+  icon: string;
+}
+
+const navItems: NavItem[] = [
+  {
+    label: "Home",
+    href: "/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"></path></svg>`,
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M4 5V19H20V7H11.5858L9.58579 5H4ZM12.4142 5H21C21.5523 5 22 5.44772 22 6V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H10.4142L12.4142 5Z"></path></svg>`,
+  },
+  {
+    label: "Shop",
+    href: "/shop",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M19.533 6.75H16.5V5.439c0 -2.464 -1.899 -4.613 -4.361 -4.687A4.5 4.5 0 0 0 7.5 5.25v1.5H4.467a0.75 0.75 0 0 0 -0.749 0.716l-0.61 13.432A2.25 2.25 0 0 0 5.354 23.25H18.645a2.25 2.25 0 0 0 2.248 -2.352l-0.61 -13.432A0.75 0.75 0 0 0 19.533 6.75M8.25 5.25c0 -2.068 1.682 -3.75 3.75 -3.75s3.75 1.682 3.75 3.75v1.5h-0.75V5.25c0 -1.655 -1.345 -3 -3 -3s-3 1.345 -3 3v1.5h-0.75zm6 1.5h-4.5V5.25a2.25 2.25 0 1 1 4.5 0zM3.857 20.932 4.467 7.5h15.067l0.61 13.432A1.5 1.5 0 0 1 18.646 22.5H5.354a1.5 1.5 0 0 1 -1.498 -1.568"></path></svg>`,
+  },
+  {
+    label: "About",
+    href: "/about",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.129 12.543A6.176 6.176 0 0 1 13.5 14.624a6.188 6.188 0 1 1 6.188 -6.188 6.154 6.154 0 0 1 -0.89 3.198C21.039 13.087 22.5 15.438 22.5 18.105v4.947a1.688 1.688 0 0 1 -1.688 1.688h-14.625A1.688 1.688 0 0 1 4.5 23.05v-4.946c0 -2.031 0.855 -3.943 2.364 -5.406a0.563 0.563 0 0 1 0.784 0.807C6.352 14.763 5.625 16.387 5.625 18.105v4.946a0.563 0.563 0 0 0 0.563 0.563h14.625c0.312 0 0.563 -0.251 0.563 -0.563v-4.946c0 -2.279 -1.276 -4.309 -3.246 -5.562m-1.024 -0.552A5.063 5.063 0 1 1 18.563 8.436a5.029 5.029 0 0 1 -0.746 2.645 9.855 9.855 0 0 0 -4.318 -0.979 0.563 0.563 0 1 0 0 1.125c1.302 0 2.528 0.276 3.606 0.762"></path></svg>`,
+  },
+];
+---
+
+<div class="flex justify-center w-full">
+  <nav
+    id="main-nav"
+    class="fixed left-1/2 -translate-x-1/2 z-[100] bg-[var(--background)] border border-1 border-transparent backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+  >
+    <div class="container mx-auto flex justify-center items-center p-3">
+      <ul
+        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
+      >
+        {
+          navItems.map((item) => (
+            <li class="flex-1 md:flex-none" key={item.href}>
+              <a
+                href={item.href}
+                class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base relative group"
+              >
+                <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[#A9FF5B] nav-indicator hidden md:block" />
+                <span class="md:hidden flex items-center justify-center w-6 h-6" innerHTML={item.icon} />
+                <span class="hidden md:inline-block">{item.label}</span>
+                <span class="md:hidden">{item.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<style>
+  nav {
+    transform: translateX(-50%);
+    background-color: var(--background);
+    transition:
+      background-color 0.3s ease,
+      border-radius 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  nav.scrolling {
+    background-color: var(--component-bg);
+    border-color: #ffffff10;
+    border-radius: 9999px;
+  }
+
+  nav a.active .nav-indicator {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      width: 100% !important;
+      transform: translateX(-50%);
+      bottom: 0;
+      left: 50%;
+      position: fixed;
+      border-radius: 1rem 1rem 0 0;
+      border-color: #ffffff10;
+    }
+
+    nav.scrolling {
+      border-radius: 1rem 1rem 0 0;
+      background-color: var(--component-bg);
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById("main-nav");
+
+  // Update nav width on scroll (your existing code)
+  const maxScroll = 1000;
+  let rafId = null;
+
+  function updateNav() {
+    if (window.scrollY > 0) {
+      nav?.classList.add("scrolling");
+
+      const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
+      const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
+
+      const minWidth = 528;
+      const maxWidth = window.innerWidth * 0.8;
+      const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
+
+      if (window.innerWidth >= 768) {
+        nav?.style.setProperty("width", `${currentWidth}px`);
+      }
+    } else {
+      nav?.classList.remove("scrolling");
+      nav?.style.setProperty("width", "80%");
+    }
+    rafId = null;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateNav);
+      }
+    },
+    { passive: true }
+  );
+
+  // Smooth scroll for hash links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = e.currentTarget;
+      const targetId = target.getAttribute("href")?.substring(1) || "";
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
+  // Active state logic
+  function setActiveLinkByPath() {
+    const links = document.querySelectorAll('nav a');
+    const currentPath = window.location.pathname;
+    links.forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      // For hash links on homepage, active state handled by IntersectionObserver (below)
+      if (!href.startsWith('#') && !href.startsWith('/#')) {
+        if (href === currentPath) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  function initIntersectionObserver() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const observerOptions = { threshold: 0.6 };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove('active'));
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    };
+
+    if (sections.length > 0 && navLinks.length > 0) {
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      sections.forEach((section) => observer.observe(section));
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setActiveLinkByPath();
+    initIntersectionObserver();
+  });
+</script>

@@ -1,0 +1,73 @@
+---
+import ExperienceItem from '../react/ExperienceItem.jsx';
+
+const experiences = [
+  {
+    year: "March 2025 - Present",
+    role: "Creative Director & CTO",
+    company: "CHHAP",
+    companyLink: "https://www.chhap.asia/",
+    location: "Hybrid",
+    summary: `Dynamic leadership role combining creative direction and technical oversight for CHHAP, an Asia-focused magazine brand. Oversaw website development and ongoing maintenance, managed digital infrastructure and the online store, ensured quality and consistency across print and digital channels, and coordinated between creative, technical, and marketing teams to deliver high-impact publications and seamless digital experiences.`,
+    responsibilities: [
+      "Developed and maintained the company’s brand identity and website.",
+      "Managed the magazine’s digital store and technical operations.",
+      "Collected newsletter subscribers data and coordinated with marketing.",
+      "Reviewed and approved magazine issues prior to print.",
+      "Oversaw private email management and internal communication systems."
+    ],
+    tech: ["Framer", "React", "CMS Integration", "JavaScript", "SQL", "Next.js", "Tailwind CSS", "E-commerce", "Branding", "Private Mail", "Lemon Squeezy"]
+  },
+  {
+    year: "2023 - Present",
+    role: "Chief Technology Officer",
+    company: "Artium Freak Communication",
+    companyLink: "https://artiumfreak.com/",
+    location: "Hybrid",
+    summary: `At Artium Freak Communication, I shaped the visual and digital identity from the ground up - crafting the company’s brand voice and design language. I brought this creativity to life by developing websites not only for the company but also for diverse clients, spanning from sleek portfolios to dynamic e-commerce platforms. Each project was an opportunity to blend strategy with design and technology, delivering memorable and effective digital experiences.`,
+    responsibilities: [
+      "Led full-cycle branding for company and clients.",
+      "Designed and developed responsive websites.",
+      "Developed and managed e-commerce platforms for various clients.",
+      "Coordinated cross-functional project delivery.",
+      "Maintained website performance and updates."
+    ],
+    tech: ["Figma", "Adobe Illustrator", "React", "CMS Integration", "Tailwind CSS", "WordPress", "WooCommerce", "Framer", "Next.js", "PHP"]
+  }
+];
+---
+
+<section
+  id="experience"
+  class="py-12 border-t border-[#ffffff10]"
+  style="background: transparent; color: var(--white);"
+>
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10">Experience</h2>
+
+    <div class="relative pl-0">
+      <!-- Vertical timeline line -->
+      <div
+        class="absolute left-5 top-5 bottom-0 w-[2px]"
+        style="background-color: var(--white-icon);"
+      ></div>
+
+      <!-- Experience items -->
+      <div class="relative z-10 space-y-24">
+        {experiences.map((exp) => (
+          <ExperienceItem
+            client:load
+            year={exp.year}
+            role={exp.role}
+            company={exp.company}
+            companyLink={exp.companyLink}
+            location={exp.location}
+            summary={exp.summary}
+            responsibilities={exp.responsibilities}
+            tech={exp.tech}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
