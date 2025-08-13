@@ -2,9 +2,9 @@
 const aboutMe = {
   name: "About Me",
   description: [
-    `I’m <span class="shiny-sec">Sadman Alam</span>, a designer and developer who loves blending creativity with technology. By day, I help bring ideas to life through clean, user-friendly websites and branding. But beyond client projects, I’m driven by a curiosity to solve everyday problems - the kind of challenges that spark my indie maker spirit.`,
-    "I enjoy sharing knowledge and exploring new design tools. Whether it’s diving into no-code platforms, experimenting with UX concepts, or posting behind-the-scenes of my creative process, I enjoy connecting with others who share my enthusiasm.",
-    "When I’m not designing or coding, you’ll probably find me capturing the world through my camera lens or savoring a quiet moment with a good cup of coffee. I believe creativity thrives in the little moments, and the stories around me always inspire me.",
+    `I'm <span class="shiny-sec">Sadman Alam</span>, a designer and developer who loves blending creativity with technology. By day, I help bring ideas to life through clean, user-friendly websites and branding. But beyond client projects, I'm driven by a curiosity to solve everyday problems - the kind of challenges that spark my indie maker spirit.`,
+    "I enjoy sharing knowledge and exploring new design tools. Whether it's diving into no-code platforms, experimenting with UX concepts, or posting behind-the-scenes of my creative process, I enjoy connecting with others who share my enthusiasm.",
+    "When I'm not designing or coding, you'll probably find me capturing the world through my camera lens or savoring a quiet moment with a good cup of coffee. I believe creativity thrives in the little moments, and the stories around me always inspire me.",
   ],
   imageUrl: "/profile2.jpg",
 };
@@ -15,20 +15,20 @@ const aboutMe = {
   class="pt-12 md:pt-36 pb-12"
   style="background: transparent; color: var(--white);"
 >
-  <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-6">
     <!-- Text -->
     <div class="md:w-1/2 space-y-6">
-      <h1 class="text-3xl font-bold">{aboutMe.name}</h1>
+      <h1 class="text-2xl sm:text-3xl font-bold sm:font-bold text-white">{aboutMe.name}</h1>
 
       {aboutMe.description.map((paragraph) => (
         paragraph.includes("<") ? (
           <p
-            class="text-white-icon text-base text-justify leading-relaxed"
+            class="text-white-icon text-sm sm:text-base text-justify leading-relaxed"
             set:html={paragraph}
           ></p>
         ) : (
           <p
-            class="text-white-icon text-base text-justify leading-relaxed"
+            class="text-white-icon text-sm sm:text-base text-justify leading-relaxed"
           >
             {paragraph}
           </p>
@@ -38,7 +38,7 @@ const aboutMe = {
 
     <div class="md:w-1/2 flex justify-center">
       <div
-        class="w-64 md:w-80 aspect-[4/5] rounded-lg shadow-lg overflow-hidden"
+        class="w-48 sm:w-64 md:w-80 aspect-[4/5] rounded-lg shadow-lg overflow-hidden"
         style="max-width: 320px;"
       >
         <img

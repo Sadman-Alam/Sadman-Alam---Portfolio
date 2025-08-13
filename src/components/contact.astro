@@ -1,15 +1,15 @@
 <section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Let's talk</h2>
-    <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-base sm:text-lg text-[var(--sec)] mb-2 shiny-sec">Let's talk</h2>
+    <h3 class="text-3xl sm:text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
       Contact
     </h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
       <div class="text-[var(--white-icon)]">
-        <p class="mb-4">
+        <p class="mb-4 text-sm sm:text-base">
           Have a question or a project in mind? Feel free to reach out.
         </p>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 text-sm sm:text-base">
           <span>Location:</span>
           <span class="text-[var(--white)]">Chittagong, Bangladesh</span>
         </div>
@@ -20,39 +20,39 @@
           id="contact-form"
           action="https://formspree.io/f/xblkwpjb"
           method="POST"
-          class="flex flex-col gap-4"
+          class="flex flex-col gap-3 sm:gap-4"
         >
           <input
             type="text"
             name="from_name"
             placeholder="Name"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
+            class="px-3 sm:px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] text-sm sm:text-base"
           />
           <input
             type="email"
             name="reply_to"
             placeholder="Email"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
+            class="px-3 sm:px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] text-sm sm:text-base"
           />
           <textarea
             name="message"
             placeholder="Message"
-            rows="6"
+            rows="5"
             required
-            class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
+            class="px-3 sm:px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none text-sm sm:text-base"
           ></textarea>
           <button
             type="submit"
-            class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
+            class="px-3 sm:px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)] text-sm sm:text-base"
           >
             Submit
           </button>
         </form>
         <div
           id="form-message"
-          class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
+          class="hidden justify-center items-center mt-4 text-[var(--white)] text-base sm:text-lg"
         >
           ✅ Thank you for your message!
         </div>

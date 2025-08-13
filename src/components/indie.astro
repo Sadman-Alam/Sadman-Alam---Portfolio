@@ -10,15 +10,15 @@ const projects = [
 ];
 ---
 
-<section id="indie-projects" class="pt-12 pb-12 max-w-5xl mx-auto px-6 border-t border-[#ffffff10]">
+<section id="indie-projects" class="pt-12 pb-12 max-w-5xl mx-auto px-4 sm:px-6 border-t border-[#ffffff10]">
   <p
-    class="text-lg font-semibold tracking-wide mb-6 text-white"
+    class="text-base sm:text-lg font-semibold tracking-wide mb-6 text-white"
     style="text-align: left;"
   >
     Take a look at some of my Built from Curiosity:
   </p>
 
-  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <div class="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
     {projects.map(({ title, description, url, imageUrl }) => (
       <article
         class="rounded-md border border-gray-700 bg-[var(--background)] overflow-hidden transition-shadow duration-200 hover:shadow-md"
@@ -27,21 +27,21 @@ const projects = [
           <img
             src={imageUrl}
             alt={`Screenshot of ${title}`}
-            class="w-full h-36 object-cover"
+            class="w-full h-32 sm:h-36 object-cover"
             loading="lazy"
             decoding="async"
           />
         )}
 
-        <div class="p-4">
-          <h3 class="text-white-icon text-lg font-bold mb-1">{title}</h3>
-          <p class="text-white-icon text-sm mb-3 leading-snug">{description}</p>
+        <div class="p-3 sm:p-4">
+          <h3 class="text-white-icon text-base sm:text-lg font-bold mb-1">{title}</h3>
+          <p class="text-white-icon text-xs sm:text-sm mb-3 leading-snug">{description}</p>
           {url && (
             <a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-teal-400 hover:text-teal-500 font-semibold text-sm transition-colors"
+              class="text-teal-400 hover:text-teal-500 font-semibold text-xs sm:text-sm transition-colors"
             >
               View Project &rarr;
             </a>

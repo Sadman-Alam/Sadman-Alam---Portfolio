@@ -37,30 +37,30 @@ function shortenTitle(title: string, maxLength = 70) {
   class="py-12 border-t border-[#ffffff10]"
   style="background: transparent; color: var(--white);"
 >
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-8">Education</h2>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-white">Education</h2>
 
-    <ul class="space-y-6 mb-12">
+    <ul class="space-y-4 sm:space-y-6 mb-8 sm:mb-12">
       {educationList.map((edu) => (
         <li>
-          <p class="text-white-icon text-sm mb-1">{edu.year}</p>
-          <p class="text-lg font-semibold">{edu.degree}</p>
-          <p class="text-sec">{edu.school}</p>
-          <p class="text-white-icon text-sm">{edu.location}</p>
+          <p class="text-white-icon text-xs sm:text-sm mb-1">{edu.year}</p>
+          <p class="text-base sm:text-lg font-semibold text-white">{edu.degree}</p>
+          <p class="text-sec text-sm sm:text-base">{edu.school}</p>
+          <p class="text-white-icon text-xs sm:text-sm">{edu.location}</p>
         </li>
       ))}
     </ul>
 
-    <h2 class="text-3xl font-bold mb-8">Publications</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-white">Publications</h2>
 
-    <ul class="space-y-4 list-disc list-inside">
+    <ul class="space-y-3 sm:space-y-4 list-disc list-inside">
       {publications.map((pub) => (
         <li>
           <a
             href={pub.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-sec hover:underline"
+            class="text-sec hover:underline text-sm sm:text-base"
             title={pub.title}
           >
             {shortenTitle(pub.title)}
