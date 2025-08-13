@@ -26,7 +26,7 @@ const publications = [
 ];
 
 // Function to shorten very long titles for better display
-function shortenTitle(title, maxLength = 70) {
+function shortenTitle(title: string, maxLength = 70) {
   if (title.length <= maxLength) return title;
   return title.slice(0, maxLength).trim() + "…";
 }
@@ -41,8 +41,8 @@ function shortenTitle(title, maxLength = 70) {
     <h2 class="text-3xl font-bold mb-8">Education</h2>
 
     <ul class="space-y-6 mb-12">
-      {educationList.map((edu, index) => (
-        <li key={`edu-${index}`}>
+      {educationList.map((edu) => (
+        <li>
           <p class="text-white-icon text-sm mb-1">{edu.year}</p>
           <p class="text-lg font-semibold">{edu.degree}</p>
           <p class="text-sec">{edu.school}</p>
@@ -54,8 +54,8 @@ function shortenTitle(title, maxLength = 70) {
     <h2 class="text-3xl font-bold mb-8">Publications</h2>
 
     <ul class="space-y-4 list-disc list-inside">
-      {publications.map((pub, index) => (
-        <li key={`pub-${index}`}>
+      {publications.map((pub) => (
+        <li>
           <a
             href={pub.link}
             target="_blank"

@@ -40,13 +40,13 @@ const navItems: NavItem[] = [
       >
         {
           navItems.map((item) => (
-            <li class="flex-1 md:flex-none" key={item.href}>
+            <li class="flex-1 md:flex-none">
               <a
                 href={item.href}
                 class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base relative group"
               >
                 <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 scale-0 opacity-0 bg-[#A9FF5B] nav-indicator hidden md:block" />
-                <span class="md:hidden flex items-center justify-center w-6 h-6" innerHTML={item.icon} />
+                <span class="md:hidden flex items-center justify-center w-6 h-6" set:html={item.icon} />
                 <span class="hidden md:inline-block">{item.label}</span>
                 <span class="md:hidden">{item.label}</span>
               </a>
@@ -145,9 +145,9 @@ const navItems: NavItem[] = [
 
   // Smooth scroll for hash links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", function (e: MouseEvent) {
       e.preventDefault();
-      const target = e.currentTarget;
+      const target = e.currentTarget as HTMLAnchorElement;
       const targetId = target.getAttribute("href")?.substring(1) || "";
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
@@ -180,7 +180,7 @@ const navItems: NavItem[] = [
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     const observerOptions = { threshold: 0.6 };
 
-    const observerCallback = (entries) => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navLinks.forEach((link) => link.classList.remove('active'));

@@ -62,40 +62,46 @@ const photos = [
   />
 </div>
 
-<script client:load>
+<script>
   // Wait for DOM content to be loaded
   window.addEventListener("DOMContentLoaded", () => {
-    const galleryGrid = document.getElementById("gallery-grid");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.getElementById("lightbox-close");
+    const galleryGrid = document.getElementById("gallery-grid") as HTMLElement | null;
+    const lightbox = document.getElementById("lightbox") as HTMLElement | null;
+    const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
+    const closeBtn = document.getElementById("lightbox-close") as HTMLButtonElement | null;
 
     // Add click listener to each image container
-    galleryGrid.querySelectorAll("img").forEach((img) => {
+    document.querySelectorAll<HTMLImageElement>("#gallery-grid img").forEach((img) => {
       img.addEventListener("click", (e) => {
         e.stopPropagation();
-        lightbox.classList.remove("hidden");
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+        lightbox?.classList.remove("hidden");
+        if (lightboxImg) {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+        }
       });
     });
 
     // Close lightbox when clicking outside image or on close button
-    lightbox.addEventListener("click", () => {
-      lightbox.classList.add("hidden");
-      lightboxImg.src = "";
-      lightboxImg.alt = "";
+    lightbox?.addEventListener("click", () => {
+      lightbox?.classList.add("hidden");
+      if (lightboxImg) {
+        lightboxImg.src = "";
+        lightboxImg.alt = "";
+      }
     });
 
-    lightboxImg.addEventListener("click", (e) => {
+    lightboxImg?.addEventListener("click", (e) => {
       e.stopPropagation();
     });
 
-    closeBtn.addEventListener("click", (e) => {
+    closeBtn?.addEventListener("click", (e) => {
       e.stopPropagation();
-      lightbox.classList.add("hidden");
-      lightboxImg.src = "";
-      lightboxImg.alt = "";
+      lightbox?.classList.add("hidden");
+      if (lightboxImg) {
+        lightboxImg.src = "";
+        lightboxImg.alt = "";
+      }
     });
   });
 </script>

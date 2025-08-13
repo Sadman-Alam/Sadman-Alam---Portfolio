@@ -20,16 +20,14 @@ const aboutMe = {
     <div class="md:w-1/2 space-y-6">
       <h1 class="text-3xl font-bold">{aboutMe.name}</h1>
 
-      {aboutMe.description.map((paragraph, index) => (
+      {aboutMe.description.map((paragraph) => (
         paragraph.includes("<") ? (
           <p
-            key={index}
             class="text-white-icon text-base text-justify leading-relaxed"
             set:html={paragraph}
           ></p>
         ) : (
           <p
-            key={index}
             class="text-white-icon text-base text-justify leading-relaxed"
           >
             {paragraph}
