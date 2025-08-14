@@ -66,7 +66,7 @@ export default function ExperienceItem({
         <p className="font-semibold mb-2" style={{ color: "var(--white)" }}>
           Summary:
         </p>
-        <p className="text-white-icon text-justify leading-relaxed">
+        <p className="text-white-icon leading-relaxed">
           {expandedSummary ? summary : summaryPreview}
         </p>
         {summary.length > 250 && (
