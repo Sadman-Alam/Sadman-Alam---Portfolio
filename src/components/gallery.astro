@@ -14,7 +14,7 @@ const photos = [
 
 <section
   id="gallery"
-  class="pt-12 pb-12 max-w-5xl mx-auto px-6 border-t border-[#ffffff10]"
+  class="pt-12 pb-12 max-w-5xl mx-auto px-0 sm:px-6 border-t border-[#ffffff10]"
 >
   <p
     class="text-lg font-semibold tracking-wide mb-4 text-white"
@@ -63,15 +63,12 @@ const photos = [
 </div>
 
 <script>
-  // Wait for DOM content to be loaded
   window.addEventListener("DOMContentLoaded", () => {
-    // const galleryGrid = document.getElementById("gallery-grid") as HTMLElement | null;
-    const lightbox = document.getElementById("lightbox") as HTMLElement | null;
-    const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
-    const closeBtn = document.getElementById("lightbox-close") as HTMLButtonElement | null;
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.getElementById("lightbox-close");
 
-    // Add click listener to each image container
-    document.querySelectorAll<HTMLImageElement>("#gallery-grid img").forEach((img) => {
+    document.querySelectorAll("#gallery-grid img").forEach((img) => {
       img.addEventListener("click", (e) => {
         e.stopPropagation();
         lightbox?.classList.remove("hidden");
@@ -82,7 +79,6 @@ const photos = [
       });
     });
 
-    // Close lightbox when clicking outside image or on close button
     lightbox?.addEventListener("click", () => {
       lightbox?.classList.add("hidden");
       if (lightboxImg) {
@@ -91,9 +87,7 @@ const photos = [
       }
     });
 
-    lightboxImg?.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
+    lightboxImg?.addEventListener("click", (e) => e.stopPropagation());
 
     closeBtn?.addEventListener("click", (e) => {
       e.stopPropagation();
