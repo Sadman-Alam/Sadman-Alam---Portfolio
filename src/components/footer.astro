@@ -8,9 +8,9 @@ const menuItems = [
 ];
 ---
 
-<footer class="w-full py-8 sm:py-12 border-t border-[#ffffff10] bg-[var(--background)]">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+<footer class="w-full py-12 border-t border-[#ffffff10] bg-[var(--background)]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
 
       {/* Left column: logo + text + social icons */}
       <div class="flex flex-col lg:items-start items-center space-y-4 text-center lg:text-left">
@@ -18,15 +18,15 @@ const menuItems = [
           <img
             src="../svg/weblogo.svg"
             alt="Logo"
-            class="h-12 sm:h-16 w-auto mb-2"
+            class="h-16 w-auto mb-2"
             loading="lazy"
           />
-          <span class="text-[var(--white-icon)] text-xs sm:text-sm font-medium">
+          <span class="text-[var(--white-icon)] text-sm font-medium">
             Sat's | Sadman Alam Tanim
           </span>
         </a>
 
-        <div class="flex space-x-4 sm:space-x-6 lg:space-x-8 mb-4 sm:mb-6 justify-center lg:justify-start">
+        <div class="flex space-x-6 sm:space-x-8 mb-6 justify-center lg:justify-start">
           {[
             {
               href: "https://github.com/Sadman-Alam",
@@ -35,12 +35,12 @@ const menuItems = [
             },
             {
               href: "https://linkedin.com/in/thisissadman",
-              icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 sm:size-8"><path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path></svg>',
+              icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8"><path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z"></path></svg>',
               label: "LinkedIn",
             },
             {
               href: "mailto:sadmanwafi31@gmail.com",
-              icon: '<svg xmlns="http://www.w3.org/2000/svg" width="1.8em" height="1.8em" viewBox="0 0 24 24"><path fill="currentColor" d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"/></svg>',
+              icon: '<svg xmlns="http://www.w3.org/2000/svg" width="2.1em" height="2.1em" viewBox="0 0 24 24"><path fill="currentColor" d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"/></svg>',
               label: "Email",
             },
           ].map((link) => (
@@ -60,9 +60,9 @@ const menuItems = [
       </div>
 
       {/* Middle column: website page menu nav as grid with bigger horizontal gap */}
-      <div class="flex flex-col items-center lg:items-start space-y-4 sm:space-y-6">
+      <div class="flex flex-col items-center lg:items-start space-y-6">
         <nav>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-3 sm:gap-y-4 text-[var(--white-icon)] font-semibold text-center lg:text-left text-sm sm:text-base">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-[var(--white-icon)] font-semibold text-center lg:text-left">
             {menuItems.map((item) => (
               <li>
                 <a
@@ -78,12 +78,12 @@ const menuItems = [
       </div>
 
       {/* Right column: Spotify iframe */}
-      <div class="flex flex-col items-center lg:items-start space-y-4 sm:space-y-6">
+      <div class="flex flex-col items-center lg:items-start space-y-6">
         <div class="w-full max-w-xs">
           <iframe
             style="border-radius:12px; border:0;"
             src="https://open.spotify.com/embed/playlist/2irOd49FRRLFWYccolQeea?utm_source=generator&theme=0&locale=en_US"
-            class="w-full h-32 sm:h-40"
+            class="w-full h-40"
             allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
@@ -92,8 +92,8 @@ const menuItems = [
       </div>
     </div>
 
-    <div class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#ffffff10]">
-      <p class="text-center text-xs sm:text-sm text-[var(--white-icon)] space-y-2">
+    <div class="mt-12 pt-8 border-t border-[#ffffff10]">
+      <p class="text-center text-sm text-[var(--white-icon)] space-y-2">
         <span class="block sm:inline">
           Copyright © 2025 <a href="" class="hover:underline">Sadman Alam</a>. All rights reserved.
         </span>

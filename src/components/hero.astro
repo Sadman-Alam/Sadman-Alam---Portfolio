@@ -15,20 +15,20 @@ const aboutMe = {
   class="pt-12 md:pt-36 pb-12"
   style="background: transparent; color: var(--white);"
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-6">
+  <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-6">
     <!-- Text -->
     <div class="md:w-1/2 space-y-6">
-      <h1 class="text-2xl sm:text-3xl font-bold sm:font-bold text-white">{aboutMe.name}</h1>
+      <h1 class="text-3xl font-bold">{aboutMe.name}</h1>
 
       {aboutMe.description.map((paragraph) => (
         paragraph.includes("<") ? (
           <p
-            class="text-white-icon text-sm sm:text-base text-justify leading-relaxed"
+            class="text-white-icon text-base text-justify leading-relaxed"
             set:html={paragraph}
           ></p>
         ) : (
           <p
-            class="text-white-icon text-sm sm:text-base text-justify leading-relaxed"
+            class="text-white-icon text-base text-justify leading-relaxed"
           >
             {paragraph}
           </p>
@@ -38,7 +38,7 @@ const aboutMe = {
 
     <div class="md:w-1/2 flex justify-center">
       <div
-        class="w-48 sm:w-64 md:w-80 aspect-[4/5] rounded-lg shadow-lg overflow-hidden"
+        class="w-64 md:w-80 aspect-[4/5] rounded-lg shadow-lg overflow-hidden"
         style="max-width: 320px;"
       >
         <img
