@@ -65,13 +65,14 @@ const photos = [
 <script>
   window.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
     const closeBtn = document.getElementById("lightbox-close");
 
-    document.querySelectorAll("#gallery-grid img").forEach((img) => {
+    document.querySelectorAll<HTMLImageElement>("#gallery-grid img").forEach((img) => {
       img.addEventListener("click", (e) => {
         e.stopPropagation();
         lightbox?.classList.remove("hidden");
+
         if (lightboxImg) {
           lightboxImg.src = img.src;
           lightboxImg.alt = img.alt;
@@ -81,17 +82,17 @@ const photos = [
 
     lightbox?.addEventListener("click", () => {
       lightbox?.classList.add("hidden");
+
       if (lightboxImg) {
         lightboxImg.src = "";
         lightboxImg.alt = "";
       }
     });
 
-    lightboxImg?.addEventListener("click", (e) => e.stopPropagation());
-
     closeBtn?.addEventListener("click", (e) => {
       e.stopPropagation();
       lightbox?.classList.add("hidden");
+
       if (lightboxImg) {
         lightboxImg.src = "";
         lightboxImg.alt = "";
